@@ -8,6 +8,10 @@ This container aims to have everything needed to begin automating your network.
 
 How to use this container
 
+### Pull from Dockerhub
+
+`docker pull packetferret/dalmasca:latest`
+
 ### Building the container
 
 `make build`

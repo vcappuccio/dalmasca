@@ -8,7 +8,7 @@ LABEL maintainer="packetferret@gmail.com"
 LABEL description="network devops container"
 LABEL license="GPLv2"
 LABEL url="https://github.com/packetferret/dalmasca"
-LABEL build-date="20190618"
+LABEL build-date="20200201"
 
 ### -------------------------------------------------
 ### Install system Package
@@ -28,26 +28,30 @@ WORKDIR /home/tmp/files
 ### -------------------------------------------------
 ### Add and install python packages
 ### -------------------------------------------------
-ADD files/requirements.txt requirements.txt
+ADD config/requirements.txt requirements.txt
 RUN pip install -r requirements.txt
-
-### -------------------------------------------------
-### Copy local files to container
-### -------------------------------------------------
-COPY files/jsnapy.cfg /etc/jsnapy/jsnapy.cfg
-COPY files/.zshrc /opt/app-root/src/.zshrc
-COPY files/ansible.cfg /opt/app-root/src/.ansible/ansible.cfg
-COPY files/dracula.zsh-theme /opt/app-root/src/.oh-my-zsh/themes/dracula.zsh-theme
+RUN pip install --upgrade pip
 
 ### -------------------------------------------------
 ### Install Ansible Galaxy roles
 ### -------------------------------------------------
-RUN ansible-galaxy install ansible-network.network-engine
-RUN ansible-galaxy install ansible-network.juniper_junos
+RUN ansible-galaxy install juniper.junos
+
+### -------------------------------------------------
+### Copy local files to container
+### -------------------------------------------------
+COPY config/jsnapy.cfg /etc/jsnapy/jsnapy.cfg
+COPY config/.zshrc /opt/app-root/src/.zshrc
+COPY config/bullet-train_custom.zsh-theme /opt/app-root/src/.oh-my-zsh/themes/bullet-train_custom.zsh-theme
+
+### -------------------------------------------------
+### Change directory to /opt/app-root/src/ansible
+### -------------------------------------------------
+WORKDIR /opt/app-root/src/ansible
 
 ### -------------------------------------------------
 ### Environmentals
 ### -------------------------------------------------
 ENV HAPPY True
 ENV SHELL /usr/bin/zsh
-ENV ANSIBLE_CONFIG /opt/app-root/src/.ansible/ansible.cfg
+ENV ANSIBLE_CONFIG /opt/app-root/src/ansible/ansible.cfg

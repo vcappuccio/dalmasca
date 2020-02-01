@@ -32,12 +32,14 @@ This is an incomplete list of packages you may find interesting
 
 - ansible
 - aos-pyez (Apstra)
+- batfish
 - f5-sdk (F5)
 - jsnapy (Juniper pre/post checks tool)
 - junos-eznc (Juniper PyEZ)
 - jxmlease (Juniper XML)
 - napalm
 - netmiko
+- ntc-ansible
 - nxapi-plumbing
 - pyeapi (Arista EOS)
 - pyIOSXR (Cisco IOS-XR)

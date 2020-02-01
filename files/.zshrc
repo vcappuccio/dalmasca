@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
-ZSH_THEME="dracula"
+ZSH_THEME="bullet-train_custom"
 
 plugins=(docker python git)
 

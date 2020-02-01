@@ -1,5 +1,5 @@
 DOCKER_IMG = packetferret/dalmasca
-DOCKER_TAG = 0.0.2
+DOCKER_TAG = latest
 
 build:
 	docker build -t $(DOCKER_IMG):$(DOCKER_TAG) .

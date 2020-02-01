@@ -24,7 +24,7 @@ Running this container will mount the current directory from your local computer
 
 If your files are in another directory, then run the following command in that directory instead.
 
-`docker run -it -v $(pwd):/home/tmp/files -w /home/tmp/files packetferret/dalmasca:0.0.1 /usr/bin/zsh`
+`docker run -it -v $(pwd):/home/tmp/files -w /home/tmp/files packetferret/dalmasca:latest /usr/bin/zsh`
 
 ## Packages installed
 

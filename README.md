@@ -12,6 +12,10 @@ How to use this container
 
 `docker pull packetferret/dalmasca:latest`
 
+Please note that if you use the image on Dockerhub instead of building it locally with this repo, you lose out on the awesome Makefile commands. Should that be the case, please use the following command to run the container instead:
+
+`docker run -it -v $(pwd):/home/tmp/files -w /home/tmp/files packetferret/dalmasca:latest /usr/bin/zsh`
+
 ### Building the container
 
 `make build`

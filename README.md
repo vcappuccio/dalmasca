@@ -12,11 +12,15 @@ How to use this container
 
 `docker pull packetferret/dalmasca:latest`
 
+This image is a "squashed" image, resulting in half the size but without any layers. For those unfamilar with docker concepts, or don't want to build the container themselves, this is the way to go.
+
 Please note that if you use the image on Dockerhub instead of building it locally with this repo, you lose out on the awesome Makefile commands. Should that be the case, please use the following command to run the container instead:
 
 `docker run -it -v $(pwd):/home/tmp/files -w /home/tmp/files packetferret/dalmasca:latest /usr/bin/zsh`
 
 ### Building the container
+
+If you're more privy to building the containers, and you're on a *nix workstation with Make installed (build-essentials), then proceed with this method instead.
 
 `make build`
 

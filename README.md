@@ -18,6 +18,12 @@ Please note that if you use the image on Dockerhub instead of building it locall
 
 `docker run -it -v $(pwd):/home/tmp/files -w /home/tmp/files packetferret/dalmasca:latest /usr/bin/zsh`
 
+This will run the container image (packetferret/dalmasca:latest) with the executable of zshell (/usr/bin/zsh), while mounting your current directory ($pwd) in /home/tmp/files; as an added bonus the command will also place you in that path within the container.
+
+Use this command in any directory on your host machine that has automation goodies to run, they'll immediately be presented as your current directory in the container.
+
+Happy automating.
+
 ### Building the container
 
 If you're more privy to building the containers, and you're on a *nix workstation with Make installed (build-essentials), then proceed with this method instead.
